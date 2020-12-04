@@ -3,8 +3,10 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
+import * as a from './actions/Index';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-KegControl = connect()(KegControl);
+
 
 class KegControl extends React.Component {
   constructor(props) {
@@ -18,10 +20,19 @@ class KegControl extends React.Component {
   //this.handleClick = this.handleClick.bind(this);
 }
 
+// handleAddingNewTicketToList = (newTicket) => {
+//   const { dispatch } = this.props;
+//   const action = a.addTicket(newTicket);
+//   dispatch(action);
+//   const actionTwo = a.toggleForm();
+//   dispatch(actionTwo);
+
 handleAddingNewKegToList = (newKeg) => {
-  const newMasterKegList = this.state.masterKegList.concat(newKeg);
-  this.setState({masterKegList: newMasterKegList,
-                formVisibleOnPage: false });
+    const { dispatch } = this.props;
+  const action = a.addTicket(newKeg);
+  dispatch(action);
+  const actionTwo = a.toggleForm();
+  dispatch(actionTwo);
   }
 
 // handleClick = () => {
@@ -81,6 +92,18 @@ render(){
   );
 }
 }
+
+KegControl.propTypes = {
+  masterKegList: propTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 
 
