@@ -12,7 +12,7 @@ class KegControl extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
-    formVisibleOnPage: false, 
+    //formVisibleOnPage: false, 
     masterKegList: [],
     pintsAvail: 0,
     selectedKeg: null
@@ -29,6 +29,7 @@ class KegControl extends React.Component {
 
 handleAddingNewKegToList = (newKeg) => {
     const { dispatch } = this.props;
+    //const { name, pintsAvail, id } = newKeg;
   const action = a.addTicket(newKeg);
   dispatch(action);
   const actionTwo = a.toggleForm();
