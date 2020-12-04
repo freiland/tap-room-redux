@@ -3,7 +3,7 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
-import * as a from './actions/Index';
+import * as a from '../actions/Index';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 
@@ -61,6 +61,21 @@ handleDeletingKeg = (id) => {
   dispatch(action);
   this.setState({selectedKeg: null});
 }
+
+
+handleEditingKegInList = (kegToEdit) => {
+  const { dispatch } = this.props;
+  const action = a.addKeg(kegToEdit);
+  dispatch(action);
+  this.setState({
+    editing: false,
+    selectedKeg: null
+  });
+}
+
+
+
+
 
 handlePouringKeg = (id) => {
   const newMasterKegList = this.state.masterKegList;
