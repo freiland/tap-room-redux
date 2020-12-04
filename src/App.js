@@ -12,12 +12,15 @@ function App() {
   return (
     <React.Fragment>
       <div class='jumbotron'>
-      
+      <provider>
       <Header />
       
-      </div>
+      
       <div class='container'>
       <KegControl />
+      </div>
+      </provider>
+      
       </div>
     </React.Fragment>
     
