@@ -2,6 +2,9 @@ import React from 'react';
 import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
+import { connect } from 'react-redux';
+
+KegControl = connect()(KegControl);
 
 class KegControl extends React.Component {
   constructor(props) {
@@ -9,7 +12,7 @@ class KegControl extends React.Component {
   this.state = {
     formVisibleOnPage: false, 
     masterKegList: [],
-    kegQuantity: 0,
+    pintsAvail: 0,
     selectedKeg: null
   };
   //this.handleClick = this.handleClick.bind(this);

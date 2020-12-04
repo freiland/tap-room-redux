@@ -52,11 +52,13 @@ describe('kegListReducer', () => {
       type: 'DELETE_KEG',
       id: 1
     };
-    expect(ticketListReducer(currentState, action)).toEqual({
-      2: {name: 'Jasmine and Justine',
-        location: '2a',
-        issue: 'Reducer has side effects.',
-        id: 2 }
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {name: 'Red Ale',
+    price: 4,
+    brand: 'Best',
+    pintsAvail: 124,
+    alcoholContent: 6,
+    id: 2 }
     });
   });
 
