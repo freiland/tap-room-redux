@@ -102,14 +102,16 @@ render(){
 }
 
 KegControl.propTypes = {
-  masterKegList: propTypes.object
+  masterKegList: propTypes.object,
+  formVisibleOnPage: propTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    masterKegList: state
+    masterKegList: state,
+    formVisibleOnPage: state.formVisibleOnPage
   }
-}
+};
 
 KegControl = connect(mapStateToProps)(KegControl);
 
