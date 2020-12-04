@@ -13,14 +13,15 @@ function KegList(props) {
 
   return (
     <React.Fragment>
+      <hr />
       
-      {props.kegList.map((keg, index) =>
-      
-      <Keg 
-      
-      name = {keg.name} key={index}
-
-       quantity = {keg.pintsAvail} />
+      {Object.values(props.KegList).map((keg) =>
+        <Keg
+          whenKegClicked = { props.onKegSelection }
+          name={keg.name}
+          pintsAvail={keg.pintsAvail}
+          id={ticket.id}
+          key={ticket.id}/>
       )}
       
     </React.Fragment>
