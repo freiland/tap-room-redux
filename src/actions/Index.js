@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 import reducer from '../reducers/keg-list-reducer';
 import { Provider } from 'react-redux';
+import React from 'react';
 
 export const deleteKeg = id => ({
   type: 'DELETE_KEG',

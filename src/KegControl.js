@@ -3,7 +3,7 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
-import * as a from '../actions/Index';
+import * as a from './actions/Index';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 
@@ -30,7 +30,7 @@ class KegControl extends React.Component {
 handleAddingNewKegToList = (newKeg) => {
     const { dispatch } = this.props;
     //const { name, pintsAvail, id } = newKeg;
-  const action = a.addTicket(newKeg);
+  const action = a.addKeg(newKeg);
   dispatch(action);
   const actionTwo = a.toggleForm();
   dispatch(actionTwo);
