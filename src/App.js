@@ -12,6 +12,7 @@ function App() {
   return (
     <React.Fragment>
       <div class='jumbotron'>
+      
       <Header />
       
       </div>
@@ -19,7 +20,7 @@ function App() {
       <KegControl />
       </div>
     </React.Fragment>
+    
   );
-}
-
+  };
 export default App;
