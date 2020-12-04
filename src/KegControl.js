@@ -43,14 +43,22 @@ handleAddingNewKegToList = (newKeg) => {
 handleClick = () => {
   if (this.state.selectedKeg != null) {
     this.setState({
-      formVisibleOnPage: false,
-      selectedFlavor: null
+      selectedKeg: null,
+      editing: false
     });
   } else {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage,
-    }));
+    const { dispatch } = this.props;
+    const action = a.toggleForm();
+    dispatch(action);
   }
+}
+
+handleDeletingKeg = (id) => {
+  const { dispatch } = this.props;
+  
+  const action = a.deleteKeg(id);
+  dispatch(action);
+  this.setState({selectedKeg: null});
 }
 
 handlePouringKeg = (id) => {
