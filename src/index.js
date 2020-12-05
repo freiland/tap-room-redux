@@ -7,8 +7,9 @@ import rootReducer from './reducers/index'
 
 ReactDOM.render(
   <React.StrictMode>
-    
+    <provider>
     <App />
+    </provider>
   
   </React.StrictMode>,
   document.getElementById('root')
